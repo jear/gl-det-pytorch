@@ -1,0 +1,16 @@
+name: XX-const
+bind_mounts:
+  - host_path: /tmp/data
+    container_path: /tmp/data
+    read_only: true
+hyperparameters:
+  global_batch_size: 32
+  dense1: 128
+records_per_epoch: 60000
+searcher:
+  name: single
+  metric: val_accuracy
+  smaller_is_better: false
+  max_length:
+    epochs: 5
+entrypoint: model_def:FashionMNISTTrial

@@ -1,0 +1,24 @@
+name: XX-distributed
+bind_mounts:
+  - host_path: /tmp/data
+    container_path: /tmp/data
+    read_only: true
+hyperparameters:
+  global_batch_size: 32
+  dense1: 128
+  filters1: 32
+  filters2: 32
+  dropout1: .45
+  dropout2: .65
+resources:
+  slots_per_trial: 1
+records_per_epoch: 59968
+searcher:
+  name: single
+  metric: val_accuracy
+  smaller_is_better: false
+  max_length:
+    epochs: 12
+entrypoint: model_def_cnn:FashionMNISTTrial
+min_validation_period:
+  epochs: 2
