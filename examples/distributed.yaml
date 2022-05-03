@@ -1,4 +1,4 @@
-name: XX-distributed
+name: jear-distributed
 bind_mounts:
   - host_path: /tmp/data
     container_path: /tmp/data
@@ -11,7 +11,7 @@ hyperparameters:
   dropout1: .45
   dropout2: .65
 resources:
-  slots_per_trial: 1
+  slots_per_trial: 4
 records_per_epoch: 59968
 searcher:
   name: single
@@ -22,3 +22,9 @@ searcher:
 entrypoint: model_def_cnn:FashionMNISTTrial
 min_validation_period:
   epochs: 2
+environment:
+  environment_variables:
+    - http_proxy=http://172.28.6.17:3128
+    - https_proxy=http://172.28.6.17:3128
+    - ftp_proxy=http://172.28.6.17:3128
+    - no_proxy=localhost,127.0.0.1,gl-hpe.local,10.111.135.214,192.168.201.75

@@ -1,4 +1,4 @@
-name: XX-const
+name: jear-const
 bind_mounts:
   - host_path: /tmp/data
     container_path: /tmp/data
@@ -14,3 +14,9 @@ searcher:
   max_length:
     epochs: 5
 entrypoint: model_def:FashionMNISTTrial
+environment:
+  environment_variables:
+    - http_proxy=http://172.28.6.17:3128
+    - https_proxy=http://172.28.6.17:3128
+    - ftp_proxy=http://172.28.6.17:3128
+    - no_proxy=localhost,127.0.0.1,gl-hpe.local,10.111.135.214,192.168.201.75

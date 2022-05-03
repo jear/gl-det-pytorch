@@ -8,11 +8,11 @@ For more information on data in Determined, read the document for preparing data
 """
 
 import gzip
-#import tempfile
+import tempfile
 
 import numpy as np
 
-#from tensorflow.python.keras.utils.data_utils import get_file
+from tensorflow.python.keras.utils.data_utils import get_file
 
 
 def load_training_data():
@@ -27,8 +27,8 @@ def load_training_data():
         https://github.com/zalandoresearch/fashion-mnist/blob/master/LICENSE).
 
     """
-    #download_directory = tempfile.mkdtemp()
-    base = "/tmp/data/"
+    download_directory = tempfile.mkdtemp()
+    base = "https://storage.googleapis.com/tensorflow/tf-keras-datasets/"
     files = [
         "train-labels-idx1-ubyte.gz",
         "train-images-idx3-ubyte.gz",
@@ -36,7 +36,7 @@ def load_training_data():
 
     paths = []
     for fname in files:
-        paths.append(base + fname)
+        paths.append(get_file(fname, origin=base + fname, cache_subdir=download_directory))
 
     with gzip.open(paths[0], "rb") as lbpath:
         y_train = np.frombuffer(lbpath.read(), np.uint8, offset=8)
@@ -59,8 +59,8 @@ def load_validation_data():
         https://github.com/zalandoresearch/fashion-mnist/blob/master/LICENSE).
 
     """
-    #download_directory = tempfile.mkdtemp()
-    base = "/tmp/data/"
+    download_directory = tempfile.mkdtemp()
+    base = "https://storage.googleapis.com/tensorflow/tf-keras-datasets/"
     files = [
         "t10k-labels-idx1-ubyte.gz",
         "t10k-images-idx3-ubyte.gz",
@@ -68,7 +68,7 @@ def load_validation_data():
 
     paths = []
     for fname in files:
-        paths.append(base + fname)
+        paths.append(get_file(fname, origin=base + fname, cache_subdir=download_directory))
 
     with gzip.open(paths[0], "rb") as lbpath:
         y_test = np.frombuffer(lbpath.read(), np.uint8, offset=8)
