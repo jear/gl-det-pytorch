@@ -1,0 +1,30 @@
+name: jear-distributed-b
+bind_mounts:
+  - host_path: /tmp/data
+    container_path: /tmp/data
+    read_only: true
+hyperparameters:
+  global_batch_size: 128
+  dense1: 128
+  filters1: 32
+  filters2: 32
+  dropout1: .45
+  dropout2: .65
+resources:
+  slots_per_trial: 4
+records_per_epoch: 59968
+searcher:
+  name: single
+  metric: val_accuracy
+  smaller_is_better: false
+  max_length:
+    epochs: 12
+entrypoint: model_def_cnn:FashionMNISTTrial
+min_validation_period:
+  epochs: 2
+environment:
+  environment_variables:
+    - http_proxy=http://172.28.6.17:3128
+    - https_proxy=http://172.28.6.17:3128
+    - ftp_proxy=http://172.28.6.17:3128
+    - no_proxy=localhost,127.0.0.1,gl-hpe.local,10.111.135.214,192.168.201.75
