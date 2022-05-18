@@ -1,4 +1,4 @@
-# PyTorch MNIST CNN Tutorial
+# Tutorial
 This tutorial shows how to build a simple CNN on the MNIST dataset using
 Determined's PyTorch API. This example is adapted from this [PyTorch MNIST
 tutorial](https://github.com/pytorch/examples/tree/master/mnist).
