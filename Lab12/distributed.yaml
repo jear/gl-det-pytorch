@@ -13,7 +13,7 @@ hyperparameters:
   horizontal_flip: True
 records_per_epoch: 50000
 resources:
-  slots_per_trial: 16 # Use 16 GPUs to train the model.
+  slots_per_trial: 4 # Use 16 GPUs to train the model.
 searcher:
   name: single
   metric: val_categorical_error
