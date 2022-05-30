@@ -5,7 +5,7 @@ metadata:
   annotations: {pipelines.kubeflow.org/kfp_sdk_version: 1.8.12, pipelines.kubeflow.org/pipeline_compilation_time: '2022-04-01T19:51:04.084235',
     pipelines.kubeflow.org/pipeline_spec: '{"description": "Train a model with Determined,
       deploy the result to Seldon", "inputs": [{"name": "detmaster"}, {"default":
-      "https://github.com/prabhum456/determined.git", "name": "mlrepo", "optional":
+      "https://github.com/jear/determined.git", "name": "mlrepo", "optional":
       true}, {"default": "master", "name": "branch", "optional": true}, {"default":
       "examples/tutorials/mnist_pytorch/const.yaml", "name": "config", "optional":
       true}, {"default": "examples/tutorials/mnist_pytorch/", "name": "context",
@@ -52,9 +52,9 @@ spec:
         '{{inputs.parameters.model_name}}', --image, '{{inputs.parameters.image}}']
       image: davidhershey/seldon-create:1.2
       env:
-      - {name: HTTPS_PROXY, value: 'http://172.29.6.250:8080'}
-      - {name: HTTP_PROXY, value: 'http://172.29.6.250:8080'}
-      - {name: NO_PROXY, value: '10.101.213.90,localhost,127.0.0.1,10.110.56.10810.104.41.208,10.110.88.18,172.29.57.233,172.29.57.112,glhc-cp-training-0.glhc-hpe.local'}
+      - {name: HTTPS_PROXY, value: 'http://172.28.6.17:3128'}
+      - {name: HTTP_PROXY, value: 'http://172.28.6.17:3128'}
+      - {name: NO_PROXY, value: 'localhost,127.0.0.1,gl-hpe.local,10.111.135.214,192.168.201.75'}
     inputs:
       parameters:
       - {name: deployment_name}
@@ -127,9 +127,9 @@ spec:
       command: [sh]
       image: alpine/git:latest
       env:
-      - {name: HTTPS_PROXY, value: 'http://172.29.6.250:8080'}
-      - {name: HTTP_PROXY, value: 'http://172.29.6.250:8080'}
-      - {name: NO_PROXY, value: '10.101.213.90,localhost,127.0.0.1,10.110.56.10810.104.41.208,10.110.88.18,172.29.57.233,172.29.57.112,glhc-cp-training-0.glhc-hpe.local'}	  
+      - {name: HTTPS_PROXY, value: 'http://172.28.6.17:3128'}
+      - {name: HTTP_PROXY, value: 'http://172.28.6.17:3128'}
+      - {name: NO_PROXY, value: 'localhost,127.0.0.1,gl-hpe.local,10.111.135.214,192.168.201.75'}
       volumeMounts:
       - {mountPath: /src/, name: create-pipeline-volume}
     inputs:
@@ -150,9 +150,9 @@ spec:
       args: [--detmaster, '{{inputs.parameters.detmaster}}', --experiment-id, '{{inputs.parameters.run-det-and-wait-Output}}',
         --model-name, '{{inputs.parameters.model_name}}', '----output-paths', /tmp/outputs/Output/data]
       env:
-      - {name: HTTPS_PROXY, value: 'http://172.29.6.250:8080'}
-      - {name: HTTP_PROXY, value: 'http://172.29.6.250:8080'}
-      - {name: NO_PROXY, value: '10.101.213.90,localhost,127.0.0.1,10.110.56.10810.104.41.208,10.110.88.18,172.29.57.233,172.29.57.112,glhc-cp-training-0.glhc-hpe.local'}
+      - {name: HTTPS_PROXY, value: 'http://172.28.6.17:3128'}
+      - {name: HTTP_PROXY, value: 'http://172.28.6.17:3128'}
+      - {name: NO_PROXY, value: 'localhost,127.0.0.1,gl-hpe.local,10.111.135.214,192.168.201.75'}
       command:
       - sh
       - -ec
@@ -286,9 +286,9 @@ spec:
       args: [--detmaster, '{{inputs.parameters.detmaster}}', --config, '{{inputs.parameters.config}}',
         --context, '{{inputs.parameters.context}}', '----output-paths', /tmp/outputs/Output/data]
       env:
-      - {name: HTTPS_PROXY, value: 'http://172.29.6.250:8080'}
-      - {name: HTTP_PROXY, value: 'http://172.29.6.250:8080'}
-      - {name: NO_PROXY, value: '10.101.213.90,localhost,127.0.0.1,10.110.56.10810.104.41.208,10.110.88.18,172.29.57.233,172.29.57.112,glhc-cp-training-0.glhc-hpe.local'}
+      - {name: HTTPS_PROXY, value: 'http://172.28.6.17:3128'}
+      - {name: HTTP_PROXY, value: 'http://172.28.6.17:3128'}
+      - {name: NO_PROXY, value: 'localhost,127.0.0.1,gl-hpe.local,10.111.135.214,192.168.201.75'}
       command:
       - sh
       - -ec
