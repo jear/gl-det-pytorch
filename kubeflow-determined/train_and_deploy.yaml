@@ -423,5 +423,5 @@ spec:
     - {name: model_name, value: mnist-prod}
     - {name: deployment_name, value: mnist-prod-kf}
     - {name: deployment_namespace, value: jerome-armand}
-    - {name: image, value: 'davidhershey/seldon-mnist:1.6'}
+    - {name: image, value: 'prabhum4/seldon-mnist'}
   serviceAccountName: pipeline-runner
