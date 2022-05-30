@@ -12,7 +12,7 @@ metadata:
       "optional": true}, {"default": "mnist-prod", "name": "model_name", "optional":
       true}, {"default": "mnist-prod-kf", "name": "deployment_name", "optional": true},
       {"default": "default", "name": "deployment_namespace", "optional": true}, {"default":
-      "davidhershey/seldon-mnist:1.6", "name": "image", "optional": true}], "name":
+      "prabhum4/seldon-mnist", "name": "image", "optional": true}], "name":
       "Determined Train and Deploy"}'}
   labels: {pipelines.kubeflow.org/kfp_sdk_version: 1.8.12}
 spec:
@@ -423,5 +423,5 @@ spec:
     - {name: model_name, value: mnist-prod}
     - {name: deployment_name, value: mnist-prod-kf}
     - {name: deployment_namespace, value: jerome-armand}
-    - {name: image, value: 'davidhershey/seldon-mnist:1.6'}
+    - {name: image, value: 'prabhum4/seldon-mnist'}
   serviceAccountName: pipeline-runner
