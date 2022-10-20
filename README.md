@@ -1,7 +1,5 @@
-# Various examples
-This tutorial shows how to build a simple CNN on the MNIST dataset using
-Determined's PyTorch API. This example is adapted from this [PyTorch MNIST
-tutorial](https://github.com/pytorch/examples/tree/master/mnist).
+# Various examples with and without proxy env var
+
 
 ## Files
 * **model_def.py**: The core code for the model. This includes building and compiling the model.
