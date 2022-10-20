@@ -54,7 +54,7 @@ spec:
       env:
       - {name: HTTPS_PROXY, value: 'http://172.28.6.17:3128'}
       - {name: HTTP_PROXY, value: 'http://172.28.6.17:3128'}
-      - {name: NO_PROXY, value: 'localhost,127.0.0.1,gl-hpe.local,10.111.135.214,192.168.201.75,10.98.57.78,seldon-webhook-service.seldon-system.svc.cluster.local'}
+      - {name: NO_PROXY, value: 'localhost,127.0.0.1,gl-hpe.local,10.104.33.131,192.168.201.75,10.98.57.78,seldon-webhook-service.seldon-system.svc.cluster.local'}
     inputs:
       parameters:
       - {name: deployment_name}
@@ -129,7 +129,7 @@ spec:
       env:
       - {name: HTTPS_PROXY, value: 'http://172.28.6.17:3128'}
       - {name: HTTP_PROXY, value: 'http://172.28.6.17:3128'}
-      - {name: NO_PROXY, value: 'localhost,127.0.0.1,gl-hpe.local,10.111.135.214,192.168.201.75,10.98.57.78,seldon-webhook-service.seldon-system.svc.cluster.local'}
+      - {name: NO_PROXY, value: 'localhost,127.0.0.1,gl-hpe.local,10.104.33.131,192.168.201.75,10.98.57.78,seldon-webhook-service.seldon-system.svc.cluster.local'}
       volumeMounts:
       - {mountPath: /src/, name: create-pipeline-volume}
     inputs:
@@ -152,7 +152,7 @@ spec:
       env:
       - {name: HTTPS_PROXY, value: 'http://172.28.6.17:3128'}
       - {name: HTTP_PROXY, value: 'http://172.28.6.17:3128'}
-      - {name: NO_PROXY, value: 'localhost,127.0.0.1,gl-hpe.local,10.111.135.214,192.168.201.75,10.98.57.78,seldon-webhook-service.seldon-system.svc.cluster.local'}
+      - {name: NO_PROXY, value: 'localhost,127.0.0.1,gl-hpe.local,10.104.33.131,192.168.201.75,10.98.57.78,seldon-webhook-service.seldon-system.svc.cluster.local'}
       command:
       - sh
       - -ec
@@ -288,7 +288,7 @@ spec:
       env:
       - {name: HTTPS_PROXY, value: 'http://172.28.6.17:3128'}
       - {name: HTTP_PROXY, value: 'http://172.28.6.17:3128'}
-      - {name: NO_PROXY, value: 'localhost,127.0.0.1,gl-hpe.local,10.111.135.214,192.168.201.75,10.98.57.78,seldon-webhook-service.seldon-system.svc.cluster.local'}
+      - {name: NO_PROXY, value: 'localhost,127.0.0.1,gl-hpe.local,10.104.33.131,192.168.201.75,10.98.57.78,seldon-webhook-service.seldon-system.svc.cluster.local'}
       command:
       - sh
       - -ec
